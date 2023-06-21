@@ -9,16 +9,16 @@
 </head>
   <?php
 
-session_start();
+session_start();    //apro sessione per condivisione variabile
 
   ?>
 <body>
   <div class="container text-center">
-    <h3>Ecco la tua nuova password:</h3>
-    <h1>
+    <h3 class="bg-secondary p-3 rounded mt-3 text-white">Ecco la tua nuova password:</h3>
+    <h1 class="border p-3 text-primary rounded">
       <?php
 
-        echo $_SESSION['ranPwd'];
+        echo $_SESSION['ranPwd'];   //stampo in pagina propria
 
       ?>
     </h1>
