@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PHP Strong Password Generator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <?php
+
+  include "functions.php";
+
+  ?>
 </head>
 <body>
   <div class="container">
@@ -35,17 +41,7 @@
 
   echo "<br />";
 
-  function getRandPwd($pwdLen){
-    $numWords = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?$&()£";
-    $strLength = strlen($numWords);
-    $randStr = "";
-
-    $x = 0;
-    while (++$x <= $pwdLen) {
-      $randStr = $randStr . $numWords[rand(0,$strLength - 1)];
-    };
-    return $randStr;
-  }
+  
     echo "<br />";
 
     var_dump(getRandPwd($pwdLen));
