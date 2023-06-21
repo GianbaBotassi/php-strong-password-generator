@@ -19,9 +19,8 @@
     <h6 class="text-center my-4">
     <?php
       $pwdLen = $_GET['pwd-len'];
-      $ranPwd = (getRandPwd($pwdLen));
+      // $ranPwd = (getRandPwd($pwdLen));
       $_SESSION['ranPwd'] = $ranPwd;
-
 
 
       if($pwdLen){
@@ -36,19 +35,39 @@
         <div  class="col-6">Lunghezza password</div>
         <input class="offset-2 col-4" type="text" name="pwd-len">
       </div>
-      <!-- <div class="row my-3">
+      <div class="row my-3">
         <div class="col-6">Consenti ripetizioni di uno o più caratteri</div>
-        <div class="offset-2 col-4">
-          <input type="radio" name="more-character" id="more-character-yes">
-          <label for="more-character-yes">Si</label>
-          <input type="radio" name="more-character" id="more-character-no">
-          <label for="more-character-no">No</label>
+        <div class="offset-2 col-4 d-flex flex-column">
+          <div>
+            <input type="radio" name="rep-char" id="rep-char-yes" checked>
+            <label for="rep-char-yes">Si</label>
+          </div>
+          <div>
+            <input type="radio" name="rep-char" id="rep-char-no">
+            <label for="rep-char-no">No</label>
+          </div>
+          <div class="d-flex flex-column py-3">
+            <div>
+              <input type="checkbox" name="letters" id="letters">
+              <label for="letters">Lettere</label>
+            </div>
+            <div>
+              <input type="checkbox" name="numbers" id="numbers">
+              <label for="numbers">Numeri</label>
+            </div>
+            <div>
+              <input type="checkbox" name="symbols" id="symbols">
+              <label for="symbols">Simboli</label>
+            </div>
+          </div>
         </div>
-      </div> -->
+      </div>
       <input type="submit" value="Send">
     </div>
     </form>
     <a href="showPwd.php">vai</a>
+
+    
 
 
 </body>
