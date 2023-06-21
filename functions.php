@@ -12,4 +12,5 @@ function getRandPwd($pwdLen){
   return $randStr;
 }
 
+
 ?>
