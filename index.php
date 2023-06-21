@@ -31,23 +31,24 @@
 
   <?php
 
-  $pwd = [];
+  $pwdLen = $_GET['pwd-len'];
 
   echo "<br />";
 
-
-    $numWords = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  function getRandPwd($pwdLen){
+    $numWords = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?$&()£";
     $strLength = strlen($numWords);
-    // var_dump($strLength);
     $randStr = "";
 
     $x = 0;
-    while (++$x <= 8) {
+    while (++$x <= $pwdLen) {
       $randStr = $randStr . $numWords[rand(0,$strLength - 1)];
     };
+    return $randStr;
+  }
     echo "<br />";
 
-    var_dump($randStr);
+    var_dump(getRandPwd($pwdLen));
 
 
 
