@@ -16,13 +16,21 @@
   <div class="container">
     <h1 class="text-center">Strong Password Generator</h1>
     <h2 class="text-center">Genera una password sicura</h2>
-    <h3 class="text-center my-4">
+    <h6 class="text-center my-4">
     <?php
       $pwdLen = $_GET['pwd-len'];
       $ranPwd = (getRandPwd($pwdLen));
-      echo $ranPwd;
+      $_SESSION['ranPwd'] = $ranPwd;
+
+
+
+      if($pwdLen){
+        header('Location: showPwd.php');
+      } else{
+        echo "Inserisci quanto vuoi che la tua password sia lunga";
+      }
       ?>
-    </h3>
+    </h6>
     <form>
       <div class="row">
         <div  class="col-6">Lunghezza password</div>
@@ -40,6 +48,7 @@
       <input type="submit" value="Send">
     </div>
     </form>
+    <a href="showPwd.php">vai</a>
 
 
 </body>
