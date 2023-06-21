@@ -8,7 +8,12 @@
 
   <?php 
     include "functions.php"; 
-    session_start();
+    $letters = $_GET['letters'];
+    $numbers= $_GET['numbers'];
+    $symbols = $_GET['symbols'];
+
+    $pwdLen = $_GET['pwd-len'];
+
   ?>
 
 </head>
@@ -18,16 +23,13 @@
     <h2 class="text-center">Genera una password sicura</h2>
     <h6 class="text-center my-4">
     <?php
-      $pwdLen = $_GET['pwd-len'];
-      // $ranPwd = (getRandPwd($pwdLen));
-      $_SESSION['ranPwd'] = $ranPwd;
+        $ranPwd = (getRandPwd($pwdLen,$letters,$numbers,$symbols));
 
-
-      if($pwdLen){
-        header('Location: showPwd.php');
-      } else{
-        echo "Inserisci quanto vuoi che la tua password sia lunga";
-      }
+        echo $ranPwd;
+        // $_SESSION['ranPwd'] = $ranPwd;
+      // if($pwdLen){
+      //   header('Location: showPwd.php');
+      // }
       ?>
     </h6>
     <form>
@@ -38,14 +40,14 @@
       <div class="row my-3">
         <div class="col-6">Consenti ripetizioni di uno o più caratteri</div>
         <div class="offset-2 col-4 d-flex flex-column">
-          <div>
+          <!-- <div>
             <input type="radio" name="rep-char" id="rep-char-yes" checked>
             <label for="rep-char-yes">Si</label>
           </div>
           <div>
             <input type="radio" name="rep-char" id="rep-char-no">
             <label for="rep-char-no">No</label>
-          </div>
+          </div> -->
           <div class="d-flex flex-column py-3">
             <div>
               <input type="checkbox" name="letters" id="letters">
@@ -67,7 +69,6 @@
     </form>
     <a href="showPwd.php">vai</a>
 
-    
 
 
 </body>
